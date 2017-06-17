@@ -13,6 +13,7 @@ class App extends Component {
     }
   }
 
+//is mounting our data and since the function is on props from mapStateToProps we acesses the function through this.props.getPokemon getPokemon is our action creator that we imported
 componentDidMount(){
   this.props.getPokemon();
 }
@@ -20,7 +21,7 @@ componentDidMount(){
 
   render() {
 
-    //this info is coming from mapStateToProps putting pokemon on props.
+    //this info is coming from componentDidMount .
     const pokeMonsters = this.props.pokemon.map( (pokemon, index) => {
       return(
         <div key={index} className=""><a href="https://repl.it/languages/javascript">{pokemon.name}</a></div>
@@ -38,7 +39,7 @@ componentDidMount(){
   }
 }
 
-
+//putting our new state on props so we can use it with props. 
 function mapStateToProps(state){
   return {
     pokemon: state.pokemon
